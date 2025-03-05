@@ -8,6 +8,16 @@ class ShoppingAddForm extends React.Component{
 		}
 	}
 	onChange = (e)=>{this.setState({[e.target.name]: e.target.value})}
+
+	onAdd = ()=>{
+		const data = {
+			title:this.state.title,
+			text:this.state.text
+		}
+		console.log(data);
+		
+	}
+
 	render(){
 		const {number,title} = this.state
 		return (
@@ -28,7 +38,7 @@ class ShoppingAddForm extends React.Component{
 				  onChange={this.onChange}
 				  value={number}/>
 				  
-				<button>Add</button>
+				<button onClick={this.onAdd}>Add</button>
 			</div>
 		)
 	}
